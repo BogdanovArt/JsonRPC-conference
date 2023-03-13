@@ -1,0 +1,67 @@
+@import "assets/scss/variables";
+.MenuItem {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  grid-template-rows: 40px;
+  column-gap: 10px;
+  padding: 0;
+  border-radius: 6px;
+  transition: $trns;
+  font-family: $title-font;
+  font-size: 14px;
+  font-weight: 600;
+  align-items: center;
+  color: $accent-color;
+  user-select: none;
+  &Clickable {
+    cursor: pointer;
+    &:hover {
+      color: $text-secondary;
+    }
+  }
+  &Title {
+    display: flex;
+    align-items: center;
+  }
+  &Icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    height: 40px;
+    transition: $trns;
+  }
+  &ActiveItem {
+    color: $text-night !important;
+    img {
+      filter: $icon-active;
+    }
+  }
+  &ActiveGroup {
+    color: $accent-color;
+    img {
+      filter: $icon-active;
+    }
+  }
+  &Expandable {
+    grid-template-rows: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-8px);
+    .MenuItemIcon {
+      max-height: 16px;
+    }
+  }
+  &Expanded {
+    opacity: 1;
+    height: 20px;
+    overflow: visible;
+  }
+  &:not(&Expandable) {
+    .MenuItemIcon {
+    }
+  }
+}

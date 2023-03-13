@@ -1,0 +1,7 @@
+{
+  "name": "OktellR2 - селектор",
+  "order": 6000,
+  "appkey": "ra_oktell_selector-panel",
+  "icon": "icons/selector.png",
+  "description": "Ролевое приложение Oktell Studio для селекторных совещаний"
+}

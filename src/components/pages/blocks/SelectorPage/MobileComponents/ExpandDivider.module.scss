@@ -1,0 +1,42 @@
+.Divider {
+  flex-grow: 1;
+  height: 1px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.Wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 8px;
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    outline: none !important;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+  }
+}
+
+.Icon {
+  width: 16px;
+  height: 16px;
+  transform: rotate(180deg);
+  :global {
+    svg {
+      width: 16px !important;
+      height: 16px !important;
+    }
+    svg path.svg-shape.color-text {
+      fill: var(--bg-primary);
+    }
+  }
+}
+
+.Reverse {
+  transform: rotate(0);
+}

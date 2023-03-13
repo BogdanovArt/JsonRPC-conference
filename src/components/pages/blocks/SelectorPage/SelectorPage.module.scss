@@ -1,0 +1,352 @@
+@import "assets/scss/variables.scss";
+
+$height: calc(100vh - 75px);
+
+.Status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  &-md, &-xs {
+    gap: 24px;
+  }
+  &Tabs {
+    justify-content: center;
+    text-align: center;
+  }
+
+  &Info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &-md, &-xs {
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+  }
+
+  &Name {
+    &-md, &-xs {
+      font-weight: 600;
+    }
+  }
+
+  &Timer {
+    &-md, &-xs {
+      flex-basis: 100%;
+      margin-top: -4px;
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+
+  &Icon {
+    &.StatusIcon-md, &.StatusIcon-xs {
+      width: 16px;
+      height: 16px;
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  :global {
+    circle.color-static {
+      fill: var(--calendar-active);
+    }
+    rect.color-static {
+      stroke: var(--calendar-active);
+    }
+  }
+}
+
+.Readonly {
+  :global {
+    .readonly {
+      display: none;
+    }
+  }
+}
+
+.Wrapper {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  column-gap: 26px;
+  overflow: hidden;
+}
+
+.Workzone {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  flex: 1 1 0;
+
+  &.Player {
+    padding: 0 20px;
+  }
+}
+
+.TopPanel {
+  padding: 0 20px;
+
+  &-md, &-xs {
+    padding: 0;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.LeftPanel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 0;
+  padding-left: 0;
+  transition: $trns;
+  overflow: hidden;
+  .SlideTabs {
+    &-md, &-xs, &Tablet {
+      position: absolute;
+      inset: 26px 0 0;
+      display: flex;
+      overflow: hidden;
+      > * {
+        position: relative;
+        width: 100%;
+        min-width: 100%;
+      }
+    }
+  }
+  > * {
+    box-sizing: border-box;
+    flex-shrink: 1;
+    min-width: 440px;
+  }
+  &Controls {
+    display: flex;
+  }
+  &Content {
+    flex: 1;
+    position: relative;
+    border: 1px solid var(--border-gray);
+
+    &Tablet {
+      min-width: 360px;
+    }
+
+    &-md, &-xs {
+      min-width: auto;
+      border: none;
+      > * {
+        min-width: auto;
+      }
+    }
+  }
+
+  &-md, &-xs {
+    &.Expanded {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+.Expanded {
+  padding-left: 16px;
+  width: 440px;
+  overflow: visible;
+  &Tablet {
+    width: 360px;
+  }
+}
+
+.Screen {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: -20px -20px 0;
+  gap: 8px;
+  padding: 16px 0;
+  height: $height;
+  max-height: $height;
+
+  &-md, &-xs {
+    gap: 0;
+    margin-top: 0;
+    padding: 0;
+    height: 100vh;
+    max-height: 100vh;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+  &Expanded {
+    :global {
+      .users-bar {
+        inset: auto 456px 0 0;
+      }
+    }
+  }
+}
+
+.Notification {
+  width: 8px;
+  height: 8px;
+  border-radius: 10px;
+  background: var(--calendar-active);
+}
+
+.Content {
+}
+
+.Controls {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 8px 20px 0 20px;
+
+  &-md, &-xs {
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 4;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: rgba(0 , 0 , 0, 0.5);
+    transition: 0.3s ease;
+
+    &.HidePanel {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.Table {
+  width: 100%;
+  > *:first-child {
+    height: 12px;
+  }
+}
+
+.Button {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 10px;
+  img {
+    filter: brightness(0) invert(1);
+  }
+}
+
+.Icon {
+  height: 43px;
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    filter: var(--icon-secondary-filter-active);
+  }
+}
+
+.Back {
+  $pad: 37px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: $pad 0;
+  margin-top: -$pad;
+  cursor: pointer;
+  &:hover {
+    color: $accent-color;
+  }
+  img {
+    filter: var(--icon-filter);
+    transform: rotate(90deg);
+  }
+}
+
+.TabButtons {
+  display: flex;
+}
+
+.Tabs {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  &Content {
+    height: 100%;
+    padding: 14px;
+    border: 1px solid $border-color;
+  }
+}
+
+.Tab {
+  display: none;
+  &Active {
+    display: block;
+  }
+}
+
+.Menu {
+  &Header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 28px;
+    &Icon {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+    &Text {
+      flex-basis: calc(100% - 32px);
+      max-width: calc(100% - 32px);
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+}
+
+.Users {
+  &Wrap {
+    display: flex;
+    flex: 1;
+    &Tabs {
+      height: 100%;
+    }
+  }
+}
+
+.TabsIndicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 0;
+  &Item {
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--border-gray);
+    border-radius: 50%;
+    &Active {
+      background: var(--text-color);
+      border-color: var(--text-color);
+    }
+  }
+}
+
+.TabHide {
+  display: none;
+}

@@ -1,0 +1,120 @@
+@import "assets/scss/variables.scss";
+
+.Controls {
+  position: absolute;
+  inset: 0 0 auto 0;
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+  > * {
+    box-sizing: border-box;
+    padding: 8px 4px !important;
+    cursor: pointer;
+  }
+}
+
+.Icon {
+  width: 24px;
+  height: 24px;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  :global {
+    svg .svg-shape.color-text {
+      fill: var(--white-color);
+    }
+  }
+}
+
+.Expander {
+  flex: 1;
+  cursor: default;
+}
+
+.Avatar {
+  &Wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &Tooltip {
+    &Wrap {
+      position: relative;
+      &.Off {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &Status {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(34, 165, 166, 0.5);
+    border-radius: 50%;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    &.Hand {
+      background: rgba(255, 66, 31, 0.5);
+    }
+
+    &.Pause {
+      background: rgba(26, 26, 26, 0.5);
+    }
+
+    :global {
+      svg .svg-shape.color-text {
+        fill: var(--white-color);
+      }
+    }
+  }
+
+  &Icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &Off {
+    opacity: 0.5;
+  }
+}
+
+.Tooltip {
+  &Text {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    white-space: pre-line;
+  }
+}
+
+.CallUser {
+  &-md, &-xs {
+    min-height: 390px;
+  }
+}
+
+:global {
+  #App .icon--active .svg-shape.color-text {
+    fill: var(--accent-color);
+  }
+  #App .icon--dimmed {
+    opacity: 0.5;
+  }
+}

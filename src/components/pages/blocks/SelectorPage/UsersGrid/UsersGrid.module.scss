@@ -1,0 +1,45 @@
+@import "assets/scss/variables.scss";
+
+.User {
+  &Item {
+    &-md, &-xs {
+      min-height: 390px;
+    }
+    &Empty {
+      cursor: pointer;
+      & > div {
+        svg {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      :global {
+        svg .svg-shape.color-text {
+          fill: var(--empty-color);
+        }
+      }
+    }
+  }
+}
+
+
+.ModalWrapper {
+  width: 800px;
+  height: 500px;
+
+  &-md, &-xs {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.UsersBar {
+  &.UsersBar-md, &.UsersBar-xs {
+    overflow-y: auto;
+    max-height: calc(100vh - 90px);
+  }
+  &Height {
+    max-height: calc(100% - 88px);
+  }
+}

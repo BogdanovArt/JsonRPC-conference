@@ -1,0 +1,21 @@
+.Container {
+  flex: 1;
+  min-height: 0;
+  max-height: 100%;
+  overflow-y: auto;
+
+  &Desktop {
+    scrollbar-width: 8px;
+    scrollbar-color: var(--bg-primary) var(--bg-selector-user);
+    &::-webkit-scrollbar {
+      width: 8px;
+      background-color: var(--bg-primary);
+      color: var(--text-color);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--bg-selector-user);
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  }
+}

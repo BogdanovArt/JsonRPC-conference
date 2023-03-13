@@ -1,0 +1,251 @@
+@import "assets/scss/variables";
+
+.Modal {
+  width: 440px;
+  font-family: $title-font;
+  background: $bg-color;
+  box-shadow: -8px 0px 14px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  &Title {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+
+  &Header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 16px 12px;
+
+    &Submodal {
+      display: flex;
+      gap: 16px;
+      padding: 20px 24px 36px 24px;
+    }
+  }
+
+  &Action {
+    &Button {
+      margin-right: 16px;
+      font-size: 12px;
+      line-height: 16px;
+      color: #22A5A6;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    &Close {
+      padding: 0;
+      margin-left: auto;
+      color: #22A5A6;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  &Content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 24px 16px;
+
+    &Title {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 600;
+    }
+
+    &Description {
+      margin-bottom: 24px;
+      font-size: 14px;
+      line-height: 20px;
+      color: #3E3E3E;
+    }
+
+    &Date {
+      margin-bottom: 24px;
+    }
+
+    &Owners {
+      margin-bottom: 34px;
+    }
+  }
+
+  &Owner {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &Title {
+      margin-left: 28px;
+      font-size: 12px;
+      line-height: 16px;
+      color: #7C7C7C;
+    }
+  }
+
+  &Members {
+    margin-bottom: 34px;
+    &Header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    &Title {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 600;
+    }
+
+    &Icon {
+      display: flex;
+      align-items: center;
+      margin: 0 8px;
+      &Clock {
+        margin-left: auto;
+      }
+    }
+
+    &List {
+      margin-bottom: 16px;
+      &Item {
+        display: flex;
+        justify-content: space-between;
+        padding: 7px 8px;
+
+        &:not(:last-of-type) {
+          border-bottom: 1px solid $border-gray;
+        }
+      }
+    }
+
+    &More {
+      margin-left: 8px;
+      font-size: 14px;
+      line-height: 20px;
+      color: $accent-color;
+    }
+  }
+
+  &Member {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &Button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+  }
+
+  &Polls {
+    &Header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    &Title {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 600;
+    }
+
+    &Button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      background: $accent-color;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    &List {
+      padding-left: 8px;
+      &Item {
+        font-size: 14px;
+        line-height: 20px;
+        color: $accent-color;
+        cursor: pointer;
+
+        &:not(:last-of-type) {
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }
+
+  &Actions {
+    display: flex;
+    justify-content: center;
+    padding: 34px 0;
+    border-top: 1px solid $border-gray;
+
+    &Button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      margin: 0 14px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    &Icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &Start {
+    display: flex;
+    justify-content: center;
+    padding: 16px 24px;
+    border-top: 1px solid $border-gray;
+    &Button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 48px;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 600;
+      color: $accent-color;
+      background: transparent;
+      border: 1px solid $accent-color;
+      border-radius: 6px;
+      cursor: pointer;
+      &:hover {
+        color: $accent-hover;
+        border-color: $accent-hover;
+      }
+    }
+  }
+
+  &Icon {
+    width: 24px;
+    height: 24px;
+    &Arrow {
+      transform: rotate(180deg);
+    }
+  }
+}

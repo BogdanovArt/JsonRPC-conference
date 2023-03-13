@@ -1,0 +1,34 @@
+@import "assets/scss/variables";
+.Wrapper {
+  padding: 0 !important;
+}
+.Wrapper, .Toggler {
+  display: flex;
+  align-items: center;
+}
+
+.Pop {
+  background: $bg-color;
+  border-radius: 4px;
+  padding: 10px 0;
+  box-shadow: $shadow-main;
+  border: 1px solid $border-color;
+}
+
+.List {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  &Item {
+    color: $text-color;
+    cursor: pointer;
+    padding: 5px 25px;
+    &:hover {
+      color: $accent-color ;
+    }
+  }
+}
+
+.Toggler {
+  cursor: pointer;
+}

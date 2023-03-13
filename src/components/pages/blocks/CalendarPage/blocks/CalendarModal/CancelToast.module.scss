@@ -1,0 +1,49 @@
+.Wrapper {
+  position: fixed;
+  inset: auto 16px 16px;
+  transition: var(--transition);
+  * {
+    user-select: none;
+  }
+  &Hidden {    
+    opacity: 0;
+    pointer-events: none;
+  }
+  &Active {
+    opacity: 1;
+  }
+}
+
+.Toast {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 16px;
+  border-radius: 6px;
+  background: var(--bg-red);
+}
+
+.Title {
+  flex-grow: 1;
+  color: var(--black-color);
+}
+
+.Button {
+  color: var(--accent-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.Icon {
+  width: 20px;
+  height: 20px;
+  :global {
+    path.svg-shape.color-text {
+      fill: var(--warning);
+    }
+  }
+}
+
+.Spacer {
+  width: 100px;
+}

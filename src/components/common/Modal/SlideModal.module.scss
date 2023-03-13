@@ -1,0 +1,83 @@
+.Wrapper {
+  position: absolute;
+  inset: -1px;
+  z-index: 2;
+
+  &::before {
+    content: "";
+  }
+}
+
+.Background {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+  border-radius: 6px;
+  z-index: 2;
+}
+
+.Underlay {
+  position: absolute;
+  inset:0;
+  background: var(--bg-primary);
+  z-index: 1;
+}
+
+.Shadow {
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.Padding {
+  padding: 16px 24px;
+}
+
+.Header {
+  display: flex;
+  gap: 10px;
+
+  &Content {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  max-height: 100%;
+  padding: 0 24px;
+}
+
+.Footer {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.BackButton {
+  padding-top: 4px;
+  cursor: pointer;
+  &.Hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+  svg {
+    width: 24px !important;
+    height: 24px !important;
+    transform: rotate(180deg);
+  }
+}
+
+:global {
+  .CurrentVotingModal {
+    &-xs {
+      position: fixed;
+    }
+  }
+}

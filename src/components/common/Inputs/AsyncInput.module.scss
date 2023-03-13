@@ -1,0 +1,63 @@
+@import "assets/scss/variables.scss";
+
+.Wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  grid-gap: 13px;
+}
+
+.Readonly {
+  pointer-events: none;
+}
+
+.List {
+  flex-grow: 1;
+  padding: 11px 0;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  &:hover {
+    border-color: $border-hover;
+  }
+  &Item {
+    display: flex;
+    align-items: center;
+    padding: 6px 18px;
+    grid-gap: 10px;
+    &:nth-child(2n - 1) {
+      background-color: $bg-tetriary;
+    }
+    > *:last-child {
+      margin-left: auto;
+    }
+    > *:nth-child(3):not(:last-child) {
+      &::before {
+        content: "(";
+      }
+      &::after {
+        content: ")";
+      }
+    }
+  }
+}
+.Icon {
+  display: flex;
+  align-items: center;
+  padding: 5px 14px;
+  cursor: pointer;
+  filter: var(--icon-secondary-filter);
+  &:hover {
+    filter: var(--icon-secondary-filter-active);
+  }
+}
+.Button {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  filter: var(--icon-filter);
+  img {
+    width: 14px;
+    height: 14px;
+  }
+}

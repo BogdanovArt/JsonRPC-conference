@@ -1,0 +1,310 @@
+@import "assets/scss/variables.scss";
+
+$height: calc(100vh - 75px);
+
+.Status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  :global {
+    circle.color-static {
+      fill: var(--calendar-active);
+    }
+    rect.color-static {
+      stroke: var(--calendar-active);
+    }
+  }
+}
+
+.Readonly {
+  :global {
+    .readonly {
+      display: none;
+    }
+  }
+}
+
+.Wrapper {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  column-gap: 26px;
+  overflow: hidden;
+}
+
+.Workzone {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  flex: 1 1 0;
+  max-height: 100%;
+  box-sizing: border-box;
+  max-width: 100vw;
+
+  &.Player {
+    padding: 0 20px;
+  }
+  &-xs,
+  &-md {
+    flex-direction: column;
+    &.Player {
+      padding: 0;
+    }
+  }
+}
+
+.TopPanel {
+  padding: 0 20px;
+}
+
+.LeftPanel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 0;
+  padding-left: 0;
+  transition: $trns;
+  overflow: hidden;
+  .SlideTabs {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    overflow: hidden;
+    > * {
+      position: relative;
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+  > * {
+    box-sizing: border-box;
+    flex-shrink: 1;
+    min-width: 440px;
+  }
+  &Controls {
+    display: flex;
+  }
+  &Content {
+    flex: 1;
+    position: relative;
+    border: 1px solid var(--border-gray);
+  }
+  &Dots {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-gray);
+    margin-bottom: -14px;
+    background-color: var(--bg-primary);
+    z-index: 2;
+  }
+  &Dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--border-gray);
+    background-color: var(--bg-primary);
+    &Active {
+      border-color: var(--text-color);
+      background-color: var(--text-color);
+    }
+  }
+  &-xs,
+  &-md {
+    padding: 0 !important;
+    min-width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-grow: 1;
+    gap: 0;
+    .LeftPanelControls {
+      padding: 0 8px;
+    }
+    .LeftPanelContent {
+      border: none;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      overflow: hidden;
+    }
+    > * {
+      min-width: 100%;
+      max-width: 100%;
+    }
+    :global {
+      .VotingItem {
+        padding: 8px 24px;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .CurrentVotingModal {
+        position: fixed;
+      }
+    }
+  }
+  &-xs,
+  &-md,
+  &Mobile {
+    :global {
+      #händehoch {
+        padding: 24px;
+      }
+      .ParticipantsSearch {
+        display: none;
+      }
+      .TabHeader {
+        display: none;
+      }
+      .VotingTab {
+        padding: 0;
+      }
+      .VotingTab {
+        padding: 0;
+      }
+      .VotingList {
+        margin: 0;
+      }
+      .VotingItem {
+        padding: 8px 24px;
+        border-bottom: 1px solid var(--border-color);
+      }
+    }
+  }
+  &-md {
+    .LeftPanelDots {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.Expanded {
+  padding-left: 16px;
+  width: 440px;
+  overflow: visible;
+}
+
+.Screen {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: -20px -20px 0;
+  gap: 8px;
+  padding: 16px 0;
+  height: $height;
+  max-height: $height;
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+  &Expanded {
+    :global {
+      .users-bar {
+        inset: auto 456px 0 0;
+      }
+    }
+  }
+  &-xs,
+  &-md {
+    position: fixed;
+    inset: 0;
+    padding: 0;
+    margin: 0;
+    max-width: 100vw;
+    overflow: hidden;
+    z-index: 50;
+    height: auto;
+    max-height: none;
+    background-color: var(--bg-primary);
+    .Wrapper {
+      flex-shrink: 1;
+    }
+  }
+}
+
+.Notification {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: var(--color-red);
+}
+
+.Content {
+}
+
+.Controls {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 8px 20px 0 20px;
+}
+
+.Table {
+  width: 100%;
+  > *:first-child {
+    height: 12px;
+  }
+}
+
+.Button {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 10px;
+  img {
+    filter: brightness(0) invert(1);
+  }
+}
+
+.Icon {
+  height: 43px;
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    filter: var(--icon-secondary-filter-active);
+  }
+}
+
+.Back {
+  $pad: 37px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: $pad 0;
+  margin-top: -$pad;
+  cursor: pointer;
+  &:hover {
+    color: $accent-color;
+  }
+  img {
+    filter: var(--icon-filter);
+    transform: rotate(90deg);
+  }
+}
+
+.TabButtons {
+  display: flex;
+}
+
+.Tabs {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  &Content {
+    height: 100%;
+    padding: 14px;
+    border: 1px solid $border-color;
+  }
+}
+
+.Tab {
+  display: none;
+  &Active {
+    display: block;
+  }
+}

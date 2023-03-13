@@ -1,0 +1,36 @@
+@import "assets/scss/variables";
+
+.Wrapper {
+
+}
+.Row {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.Wrapper {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: $tetriary-color;
+  border-radius: 4px;
+}
+
+.Group {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  background: $secondary-color;
+}
+
+.Label {
+  margin-bottom: 6px;
+}

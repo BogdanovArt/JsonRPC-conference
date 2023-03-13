@@ -1,0 +1,72 @@
+@import "assets/scss/variables";
+
+.Container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  color: $text-color;
+  z-index: 199;
+
+  &-md, &-xs {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.Overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.Content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 24px;
+  width: 100%;
+  max-width: 230px;
+  background: transparent;
+  z-index: 2;
+}
+
+.Button {
+  font-size: 14px;
+  &.ButtonMobileText {
+    width: auto;
+  }
+}
+
+.TimerWrap {
+  position: relative;
+  color: var(--white-color);
+  svg {
+    width: 230px;
+    height: 230px;
+  }
+}
+
+.TimerInfo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--white-color);
+}
+
+.Count {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: bold;
+}

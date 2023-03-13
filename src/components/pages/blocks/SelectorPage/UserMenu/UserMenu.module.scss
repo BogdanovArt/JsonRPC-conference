@@ -1,0 +1,79 @@
+.Menu {
+  &Content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 8px;
+    width: 216px;
+    word-break: break-all;
+    text-align: left;
+    font-family: var(--secondary-font);
+    cursor: default;
+    &Compact {
+      padding: 32px 32px 16px 8px;
+      width: auto;
+    }
+    svg {
+      width: 16px !important;
+      height: 16px !important;
+    }
+  }
+  &Wrapper {
+    border-radius: 6px;
+    color: var(--text-color);
+    background: var(--bg-primary);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1) !important;
+  }
+  &Item {
+    display: grid;
+    grid-template-columns: 16px 1fr;
+    align-items: center;
+    gap: 6px;
+    padding: 5px;
+    cursor: pointer;
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+}
+
+.Shifted {
+  transform: translateY(-10px) !important;
+}
+
+.Toggler {
+  cursor: pointer;
+  padding: 0 !important;
+}
+
+.Remove {
+  color: var(--calendar-active);
+}
+
+.Close {
+  position: absolute;
+  inset: 0 0 auto auto;
+  padding: 13px;
+  cursor: pointer;
+  svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  &:hover {
+    :global {
+      .svg-shape {
+        fill: var(--calendar-active) !important;
+      }
+    }
+  }
+}
+
+.Icon {
+  &Success {
+    :global {
+      .svg-shape {
+        fill: var(--accent-color) !important;
+      }
+    }
+  }
+}

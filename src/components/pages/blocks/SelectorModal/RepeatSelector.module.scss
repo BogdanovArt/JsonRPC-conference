@@ -1,0 +1,50 @@
+@import "assets/scss/variables.scss";
+
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+.Row {
+  display: flex;
+  gap: 10px;
+  justify-content: stretch;
+  margin-bottom: 10px;
+  &Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.Label {
+  margin-bottom: 6px;
+}
+
+.FormControls {
+  margin-top: 13px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Disabled {
+  opacity: 0.5;
+}
+
+.CountRepeat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  &Wide {
+    input {
+      width: 16px;
+    }
+  }
+}
+
+.ActionsButton {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}

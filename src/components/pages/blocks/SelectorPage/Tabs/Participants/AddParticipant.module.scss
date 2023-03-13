@@ -1,0 +1,72 @@
+.Wrapper {
+  :global {
+    .required {
+      color: var(--color-red);
+    }
+  }
+}
+
+.Header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 24px;
+  font-weight: 800;
+  span {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-quaternary);
+  }
+}
+
+.Icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  svg {
+    width: 32px;
+    height: 32px;
+    :global {
+      .svg-shape.color-text {
+        fill: var(--accent-color);
+      }
+    }
+  }
+}
+
+.Button {
+  color: var(--accent-color);
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  &Block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  &Row {
+    display: flex;
+    gap: 20px;
+  }
+  &Hint {
+    font-size: 12px;
+  }
+}
+
+.Add {
+  &Modal {
+    &-xs {
+      position: fixed;
+    }
+  }
+  &Button {
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
+    z-index: 4;
+  }
+}
+

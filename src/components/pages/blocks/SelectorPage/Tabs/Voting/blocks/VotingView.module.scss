@@ -1,0 +1,14 @@
+.Wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background-color: var(--bg-other);
+}
+
+.Line {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

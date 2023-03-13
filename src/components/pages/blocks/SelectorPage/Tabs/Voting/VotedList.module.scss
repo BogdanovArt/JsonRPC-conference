@@ -1,0 +1,43 @@
+.Toggler {
+  font-size: 18px;
+  border-bottom: 1px dotted currentColor;
+  color: var(--accent-color);
+  cursor: pointer;
+  user-select: none;
+}
+
+.Active {
+  color: var(--text-color);
+}
+
+.Header {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.VotingBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Voted {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.VotedUsers {
+  :global {
+    .user-item:first-child {
+      border-top: 1px solid var(--border-gray);
+    }
+  }
+}

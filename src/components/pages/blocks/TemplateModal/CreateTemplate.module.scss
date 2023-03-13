@@ -1,0 +1,70 @@
+@import "assets/scss/variables.scss";
+
+.Wrapper {
+  min-width: 500px;
+  color: $text-color;
+}
+
+.Tabs {
+  display: flex;
+  grid-gap: 20px;
+  padding: 40px 0 20px;
+  &Menu {
+    padding: 0;
+    margin: 0;
+    width: 140px;
+    color: $text-secondary;
+    font-size: 12px;
+    list-style-type: none;
+  }
+  &Label {
+    cursor: pointer;
+    &:hover {
+      color: $text-color;
+    }
+    &Active {
+      font-weight: 600;
+      color: $accent-color !important;
+    }
+  }
+  &Content {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    > * {
+      grid-area: 1 / 1;
+    }
+  }
+}
+
+.Divider {
+  width: 1px;
+  max-height: 120px;
+  border-left: 1px solid $border-color;
+}
+
+.Controls {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Button {
+  font-family: $main-font;
+  font-weight: 600;
+  padding: 14px 24px;
+  color: #fff;
+  background-color: $accent-color;
+  border: 1px solid $accent-color;
+  border-radius: 6px;
+  cursor: pointer;
+  &:disabled {
+    background-color: $bg-tetriary;
+    border-color: $bg-tetriary;
+  }
+}
+
+.Switches {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 8px;
+}

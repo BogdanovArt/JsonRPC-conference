@@ -1,0 +1,122 @@
+.Wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  &-xs,
+  &-md {
+    flex: 0;
+    max-height: 100%;
+    gap: 8px;
+    .SelectorTitle {
+      font-size: 14px;
+      font-weight: 400;
+      &Fake {
+        position: absolute;
+        left: 0;
+        right: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 20px;
+        background-color: var(--bg-primary);
+      }
+    }
+    .SelectorDescription {
+      > div {
+        font-weight: 600;
+      }
+    }
+    .SelectorExpand {
+      max-height: 19px;
+      border: none;
+      background: transparent;
+      position: sticky;
+      top: 8px;
+      align-self: flex-end;
+      margin-bottom: -19px !important;
+      margin-right: 20px !important;
+      background: var(--bg-primary);
+      z-index: 2;
+      :global {
+        svg {
+          transform: rotate(180deg);
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+    .SelectorWrapper {
+      &Expanded {
+        .SelectorWrapperContent::after {
+          content: none;
+        }
+      }
+      &Grid {
+        padding: 0 24px;
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      &Content {
+        padding-right: 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 100%;
+        flex-grow: 1;
+      }
+    }
+    .TimeStamp {
+      padding: 0 24px;
+      font-size: 14px !important;
+    }
+  }
+}
+
+.Screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  padding: 24px;
+  background: var(--bg-other);
+  &-xs,
+  &-md {
+    padding: 0;
+    &:not(.Fullscreen) {
+      min-height: 250px;
+      max-height: 250px;
+    }
+  }
+  &Mobile {
+    padding: 0;
+  }
+}
+
+.Fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+}
+
+.Selector {
+  &Title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  &Description {
+  }
+  &Wrapper {
+  }
+  &Expand {
+  }
+}
+
+.Info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}

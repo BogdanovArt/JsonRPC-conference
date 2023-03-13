@@ -1,0 +1,41 @@
+@import "assets/scss/variables";
+
+$durTotal: 4s;
+$repeats: infinite;
+
+.Loading {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity $trns;
+  &Active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  &Overlay {
+    position: absolute;
+    inset: 0;
+    background: $bg-color;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  &Spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+    background-color: $bg-color;
+    > * {
+      width: auto !important;
+    }
+  }
+}
+
+

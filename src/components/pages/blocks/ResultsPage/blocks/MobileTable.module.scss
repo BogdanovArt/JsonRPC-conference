@@ -1,0 +1,61 @@
+.Table {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
+.Header {
+  &Month {
+    position: sticky;
+    top: 0;
+    padding: 8px;
+    background-color: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+    font-family: var(--secondary-font);
+    z-index: 3;
+  }
+  &Date {
+    font-size: 16px;
+  }
+}
+
+.Dates {
+}
+
+.Group {
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  font-family: var(--secondary-font);
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+  }
+}
+
+.Selectors {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.SelectorTitle {
+  font-weight: 600;
+  color: var(--accent-color);
+}
+.Selector {
+  &Duration {
+    font-size: 12px;
+  }
+}
+
+.Hint {
+  padding: 8px;
+  font-family: var(--secondary-font);
+  color: var(--text-quaternary);
+}

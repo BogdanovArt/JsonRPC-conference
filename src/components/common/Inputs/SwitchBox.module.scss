@@ -1,0 +1,54 @@
+@import "assets/scss/variables";
+
+.Wrapper {
+  display: flex;
+  grid-gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.Reverse {
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+
+.Readonly {
+  pointer-events: none;
+}
+
+.Box {
+  display: flex;
+  box-sizing: border-box;
+  width: 44px;
+  padding: 4px;
+  height: 24px;
+  border-radius: 12px;
+  background: $bg-tetriary;
+  box-shadow: inset -1px 1px 5px 1px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.Dot {
+  margin-left: 0;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
+  transition: margin-left 0.15s;
+}
+
+.Label {
+  color: $text-color;
+}
+
+.Active {
+  background: $accent-color;
+  .Dot {
+    margin-left: 20px;
+    box-shadow: -1px 1px 1px 1px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.Disabled {
+}

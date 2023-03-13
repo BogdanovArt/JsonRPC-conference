@@ -1,0 +1,152 @@
+@import "assets/scss/variables";
+
+.Wrapper {
+  display: flex;
+  gap: 40px;
+}
+
+.Grid {
+  &-md,
+  &-xs {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 94px);
+    margin: 0 -20px;
+  }
+}
+
+.Sidebar {
+  flex-basis: 260px;
+  max-width: 260px;
+  &-xl {
+  }
+  &-lg {
+  }
+  &-md {
+    display: none;
+  }
+}
+
+.Lists {
+  z-index: 1;
+  &-xs,
+  &-md {
+    position: relative;
+    display: flex;
+    flex-basis: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+  }
+}
+
+.Toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 40px;
+  margin-bottom: 20px;
+}
+
+.Date {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.Filters {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  &Title {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  &Item {
+    margin-bottom: 8px;
+  }
+}
+
+.Title {
+  margin: 0;
+  font-family: $title-font;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  color: $text-color;
+
+  &Text {
+    display: inline-block;
+    margin-right: 10px;
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &Count {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+}
+
+.SelectedUsers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 32px 0 0;
+  padding: 16px 0;
+
+  &Border {
+    border-top: 1px solid var(--border-gray);
+  }
+}
+
+.Search {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: $bg-color;
+  cursor: pointer;
+}
+
+.ListsSidebar {
+  max-height: calc(100vh - 94px);
+}
+
+.CreateButton {
+  position: fixed;
+  bottom: 24px;
+  margin: 0 calc(50% - 186px / 2);
+  white-space: nowrap;
+  z-index: 5;
+}
+
+.SelectorModal {
+  &-lg,
+  &-xl {
+  }
+  &-md, &Mobile {
+    :global {
+      .ModalContent {
+        position: fixed;
+        min-height: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &-xs {
+    :global {
+      .ModalContent {
+        position: fixed;
+        inset: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

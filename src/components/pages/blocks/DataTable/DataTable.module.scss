@@ -1,0 +1,99 @@
+@import "assets/scss/variables.scss";
+.Container {
+}
+.Controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  &Button {
+    display: flex;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+      filter: var(--icon-filter-active);
+    }
+  }
+}
+.Table {
+  width: 100%;
+  border-collapse: collapse;
+  user-select: none;
+  &Headers {
+    cursor: pointer;
+  }
+  &Header,
+  &Cell {
+    padding: 14px 10px;
+    font-size: 14px;
+  }
+  &Header {
+    font-weight: 600;
+    &.state-buttons + &.displayname {
+      transform: translateX(-28px);
+    }
+    &Content {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      img {
+        opacity: 0;
+        filter: $icon-filter;
+      }
+      &:hover {
+        img {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &Body {
+  }
+  &Row {
+    cursor: default;
+    transition: $trns;
+    &:hover {
+      color: $text-secondary;
+    }
+  }
+  &Cell {
+  }
+  &Button {
+    border: 1px solid lawngreen;
+  }
+}
+
+.Icon {
+  &Active {
+    opacity: 1 !important;
+    filter: $icon-active !important;
+  }
+  &Reverse {
+    transform: rotate(180deg);
+  }
+}
+
+.Unactive {
+  pointer-events: none;
+}
+
+.select {
+  width: 18px;
+  padding: 5px;
+}
+
+.state-buttons {
+  width: 15px;
+  padding-right: 5px;
+  & + .controls-boolean {
+    width: 15px;
+  }
+}
+
+.controls-boolean {
+  width: 15px;
+}
+
+.number {
+  white-space: nowrap;
+}

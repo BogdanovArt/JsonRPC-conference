@@ -1,0 +1,87 @@
+@import "assets/scss/variables";
+
+.Wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  user-select: none;
+  .Label {
+    margin-right: 8px;
+  }
+}
+.Reverse {
+  flex-direction: row-reverse;
+  .Label {
+    margin-left: 8px;
+  }
+}
+.Box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  border: 1px solid $hint-color;
+  cursor: pointer;
+}
+
+.Big {
+  padding: 1px;
+  .Dot {
+    width: 11px;
+    min-width: 11px;
+    height: 11px;
+    min-height: 11px;
+  }
+}
+
+.Dot {
+  display: block;
+  width: 10px;
+  min-width: 10px;
+  height: 10px;
+  min-height: 10px;
+  opacity: 0;
+}
+
+.Label {
+  color: $text-color;
+  font-size: 14px;
+}
+
+.Active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  .Dot {
+    opacity: 1;
+  }
+}
+
+.Disabled {
+  &.Active {    
+    background: $hint-color;
+    border-color: $hint-color;
+  }
+  pointer-events: none;
+}
+
+.Days {
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  background: $bg-color;
+  color: $accent-color;
+  border-radius: 4px;
+  cursor: pointer;
+  &Label {
+    border-bottom: 1px dashed $accent-color;
+  }
+
+  &.Active {
+    background: $text-color;
+    color: $bg-color;
+
+    .DaysLabel {
+      border-bottom: none;
+    }
+  }
+}

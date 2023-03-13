@@ -1,0 +1,80 @@
+.Wrapper {
+  display: flex;
+  max-width: 100%;
+  min-width: 0;
+  &:hover {
+    .TextReadonly {
+      color: var(--accent-color);
+    }
+  }
+}
+
+.Text {
+  &Readonly {
+    flex: 1;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-width: 100%;
+    min-width: 0;
+    cursor: text;
+  }
+  &Interactive {
+    box-sizing: border-box;
+    flex: 1;
+    resize: none;
+    min-height: 48px;
+    outline: none !important;
+    padding: 8px;
+    border: 1px solid var(--border-gray);
+    border-radius: 6px;
+    font-family: var(--secondary-font);
+    font-size: 12px;
+    background-color: var(--bg-primary);
+    color: var(--text-color);
+    &:focus {
+      border-color: var(--text-color);
+    }
+  }
+  &Area {
+    &Wrap {
+      width: 100%;
+      &-md, &-xs, &Tablet {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px;
+        box-sizing: border-box;
+        background: var(--bg-primary);
+        border-top: 1px solid var(--border-gray);
+
+        .TextInteractive {
+          min-height: 32px;
+        }
+      }
+
+      .TextInteractive {
+        width: 100%;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.Send {
+  cursor: pointer;
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  :global {
+    svg .svg-shape.color-text{
+      fill: var(--accent-color);
+    }
+  }
+}

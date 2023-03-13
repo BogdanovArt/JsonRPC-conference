@@ -1,0 +1,32 @@
+@import "assets/scss/themes";
+@import "assets/scss/variables";
+
+:global {
+  .container {
+    margin: 0 auto;
+    max-width: $xl;
+  }
+  #App .Oktell__Panel {
+    box-shadow: 0px 0px 1px 1px #ccc;
+  }
+  .divider {
+    border-bottom: 1px solid var(--border-color);
+  }
+  .highlight {
+    background-color: #f9dfa8;
+  }
+}
+
+body {
+  font-size: 14px;
+  font-family: $main-font;
+  letter-spacing: 0;
+  overflow-x: hidden !important;
+}
+
+a {
+  color: var(--accent-color);
+  &:hover {
+    color: var(--accent-hover);
+  }
+}

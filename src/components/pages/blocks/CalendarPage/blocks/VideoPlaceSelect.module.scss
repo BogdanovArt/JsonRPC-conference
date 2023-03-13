@@ -1,0 +1,63 @@
+.Wrapper {
+  width: 800px;
+  margin: 0 -24px;
+  &-md, &-xs {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.Place {
+  display: flex;
+  flex-wrap: wrap;
+  height: 464px;
+  &-md, &-xs {
+    height: calc(100vh - 145px);
+    overflow-y: auto;
+  }
+}
+
+.User {
+  &List {
+    &:not(:last-of-type) {
+      border-bottom: 1px solid var(--border-gray);
+    }
+  }
+  &Item {
+    &Empty {
+      & > div {
+        svg {
+          width: 50%;
+          height: 50%;
+        }
+      }
+
+      :global {
+        svg .svg-shape.color-text {
+          fill: var(--empty-color);
+        }
+      }
+    }
+
+    &Card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &Name {
+        margin-top: 4px;
+        color: var(--white-color);
+      }
+    }
+
+    &.UserItemCell {
+      background: var(--black-color);
+    }
+  }
+}
+
+.ActionButtons {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 0;
+}

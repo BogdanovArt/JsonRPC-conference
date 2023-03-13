@@ -1,0 +1,37 @@
+.Wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.Button {
+  display: flex;
+  gap: 4px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &.Active {
+    color: var(--accent-color);
+    :global {
+      svg .svg-shape.color-text {
+        fill: var(--accent-color);
+      }
+    }
+  }
+
+  &.Disabled {
+    opacity: 0.5;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 16px;
+  }
+
+  :global {
+    svg .svg-shape.color-text {
+      fill: var(--grey-color);
+    }
+  }
+}

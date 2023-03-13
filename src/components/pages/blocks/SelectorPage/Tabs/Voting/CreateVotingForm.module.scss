@@ -1,0 +1,108 @@
+@import "assets/scss/variables.scss";
+
+.Wrapper {
+  display: grid;
+  grid-auto-rows: 0fr;
+  gap: 20px;
+}
+.Options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.Icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 48px;
+  cursor: pointer;
+}
+
+.InputRow {
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 48px 1fr 32px;
+  gap: 8px;
+  &:hover {
+    .IconButton {
+      opacity: 1;
+    }
+  }
+  :global {
+    .remove-icon {
+      justify-content: flex-end;
+      width: 100%;
+      .svg-shape.color-text {
+        fill: var(--text-quaternary) !important;
+      }
+    }
+    .clear-icon {
+      .svg-shape.color-text {
+        fill: var(--border-gray) !important;
+      }
+    }
+  }
+}
+
+.IndexBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 6px;
+  background: var(--bg-other);
+}
+
+.InputPrefix {
+  box-sizing: border-box;
+  height: 43px;
+  display: flex;
+  padding: 0 5px 0px 10px;
+  align-items: center;
+  cursor: pointer;
+  white-space: nowrap;
+  color: var(--placeholder);
+}
+
+.IconButton {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  width: 30px;
+  height: 40px;
+  bottom: 1px;
+  right: 1px;
+  opacity: 0;
+  transition: $trns;
+  background-color: $bg-color;
+  cursor: pointer;
+  img {
+    opacity: 0.5;
+    filter: $icon-filter;
+  }
+  &:hover {
+    img {
+      opacity: 1;
+      filter: $icon-active;
+    }
+  }
+}
+
+.Controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 28px;
+  span {
+    display: flex;
+    margin-top: -2px;
+    font-size: 20px;
+  }
+}

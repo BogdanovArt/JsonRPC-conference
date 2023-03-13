@@ -1,0 +1,16 @@
+.Modal {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  inset: auto;
+  right: 0;
+  width: 440px;
+  max-height: calc(100vh - 225px);
+  color: var(--text-color);
+  background: var(--bg-primary);
+  font-family: var(--secondary-font);
+  border-radius: 6px;
+  box-shadow: -8px 0px 14px rgba(0, 0, 0, 0.2);
+  z-index: 14;
+}

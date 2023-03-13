@@ -1,0 +1,63 @@
+.SlideModalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &Icon {
+    margin-left: calc(50% - 34px);
+  }
+
+  &Button {
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .IconModal {
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.Search {
+  &Wrap {
+    margin-bottom: 16px;
+  }
+
+  &Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 20px;
+    cursor: pointer;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &Controls {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    gap: 12px;
+    padding: 0 12px;
+  }
+}
+
+.IconModal {
+  :global {
+    svg .svg-shape.color-text {
+      fill: var(--empty-color);
+    }
+  }
+}

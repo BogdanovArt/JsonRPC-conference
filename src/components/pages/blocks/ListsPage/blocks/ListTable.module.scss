@@ -1,0 +1,103 @@
+@import "assets/scss/variables";
+
+.Table {
+  width: 100%;
+  border-collapse: collapse;
+  &Row {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid $border-gray;
+
+    &Selected {
+      background: #59c6a24f;
+    }
+  }
+  &Cell {
+    padding: 8px;
+    font-size: 14px;
+    font-family: var(--secondary-font);
+    line-height: 20px;
+    color: $text-color;
+
+    &Small {
+      flex-basis: 20%;
+      max-width: 20%;
+    }
+
+    &Big {
+      flex-basis: 40%;
+      max-width: 40%;
+    }
+
+    &Head {
+      .TableCell {
+        color: $text-tetriary;
+      }
+    }
+
+    &Body {
+      .TableRow {
+        &:hover {
+          background-color: var(--bg-secondary);
+        }
+      }
+    }
+
+    &Date {
+      &Time {
+        font-size: 12px;
+        line-height: 16px;
+        color: $text-quinary;
+      }
+    }
+
+    &Name {
+      font-weight: 600;
+      color: $text-senary;
+      &Search {
+        color: $accent-color;
+        &Active {
+          background: $search-color;
+        }
+      }
+    }
+
+    &Owner {
+      font-size: 12px;
+      line-height: 16px;
+      color: $text-quinary;
+    }
+
+    &Participants {
+      display: flex;
+      gap: 8px;
+      &Item {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+    }
+  }
+}
+
+.NameCell {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+
+  &Text {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+.ListsTable {
+  max-height: calc(100vh - 330px);
+
+  &Pagination {
+    max-height: calc(100vh - 370px);
+  }
+}

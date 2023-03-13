@@ -1,0 +1,40 @@
+.Header {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  gap: 6px;
+}
+
+.Icon {
+  width: 14px;
+  height: 14px;
+  svg {
+    height: 100% !important;
+    width: 100% !important;
+  }
+}
+
+.List {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 14px 0;
+  &Item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent-color);
+    cursor: pointer;
+    &Search {
+      &Active {
+        background: var(--search-color);
+      }
+    }
+    &-xs,
+    &-md {
+      &:not(:last-of-type) {
+        border-bottom: 1px solid var(--border-color);
+      }
+    }
+  }
+}

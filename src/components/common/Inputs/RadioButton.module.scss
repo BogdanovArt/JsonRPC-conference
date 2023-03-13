@@ -1,0 +1,135 @@
+@import "assets/scss/variables";
+
+.Wrapper {
+  display: flex;
+  align-items: center;
+  user-select: none;
+  gap: 8px;
+
+  .Icon {
+    svg {
+      width: 20px;
+      height: 16px;
+    }
+    :global{
+      svg .svg-shape.color-text{
+        fill: var(--grey-color);
+      }
+    }
+  }
+}
+
+.Box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  border: 1px solid $hint-color;
+  cursor: pointer;
+}
+
+.Big {
+  padding: 1px;
+  .Dot {
+    width: 11px;
+    min-width: 11px;
+    height: 11px;
+    min-height: 11px;
+  }
+}
+
+.Dot {
+  display: block;
+  width: 10px;
+  min-width: 10px;
+  height: 10px;
+  min-height: 10px;
+  opacity: 0;
+}
+
+.Label {
+  color: $text-color;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.Radio {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--text-night);
+  border-radius: 50%;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &.Disabled {
+    cursor: default;
+  }
+
+  &Icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 36px;
+    height: 52px;
+    padding: 8px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    .Label {
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 400;
+    }
+
+    &.Active {
+      background: var(--accent-hover);
+
+      .Label {
+        color: var(--white-color);
+      }
+
+      :global{
+        svg .svg-shape.color-text{
+          fill: var(--white-color);
+        }
+      }
+    }
+
+    &.Disabled {
+      cursor: default;
+    }
+  }
+}
+
+.Input {
+  display: none;
+  &:checked {
+    + .Radio {
+      position: relative;
+      background: var(--primary-color);
+      border-color: var(--primary-color);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 8px;
+        height: 8px;
+        background: #fff;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &Disabled {
+    & + .Radio {
+      &Icon {
+        opacity: 0.3;
+        cursor: default;
+      }
+    }
+  }
+}
+

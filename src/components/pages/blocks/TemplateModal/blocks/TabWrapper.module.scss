@@ -1,0 +1,13 @@
+.Tab {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 10px;
+  &Title {
+    font-size: 10px;
+    font-weight: 600;
+  }
+}
+.Visible {
+  visibility: visible;
+}

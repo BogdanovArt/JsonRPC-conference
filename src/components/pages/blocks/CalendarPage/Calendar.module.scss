@@ -1,0 +1,665 @@
+@import "assets/scss/variables";
+
+$workHeight: calc(100vh - 180px);
+
+.Screen {
+  $h: calc(100vh - 100px);
+  height: $h;
+  max-height: $h;
+  .WeekLayoutWorkspace {
+    height: 100%;
+    max-height: 100%;
+  }
+  :global {
+    [class*="Label-text-"] {
+      font-family: var(--secondary-font);
+    }
+    [class*="makeStyles-table-"] {
+      min-width: 0;
+    }
+    [class*="Date--"] {
+      min-width: 0;
+    }
+    [class*="WeekLayoutWorkspaceGrid--"] {
+      overflow-x: hidden;
+      table {
+        border-collapse: separate;
+      }
+    }
+    [class*="Event--"] {
+      border-color: transparent;
+    }
+
+    [class*="Calendar--"] {
+      max-width: 100%;
+      gap: 0px;
+      height: 100%;
+      min-height: 100%;
+      max-height: 100%;
+      flex-basis: 100%;
+    }
+    .MonthLayoutScrollContainer {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      overflow: hidden;
+    }
+    [class*="MonthLayout--"],
+    [class*="TimeTable--"] {
+      min-height: 100%;
+      height: 100%;
+    }
+
+    [class*="MonthLayout--"] {
+      table {
+        table-layout: fixed;
+        height: 100%;
+      }
+      td {
+        height: auto;
+      }
+    }
+
+    #calendar-workspace {
+      max-height: none;
+      flex-shrink: 1;
+      overflow: hidden;
+      > div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  &Mobile {
+    &.Screen-lg,
+    &.Screen-xl {
+      :global {
+        [class*="Calendar--"] {
+          gap: 16px;
+        }
+      }
+    }
+  }
+  &-xs,
+  &-md {
+    :global {
+      [class*="MonthLayout--"] {
+        padding: 0 8px;
+      }
+    }
+  }
+  &-xs,
+  &-md {
+    display: flex;
+    margin: 0 -20px;
+    width: 100vw;
+    max-width: 100vw;
+    overflow: hidden;
+
+    :global {
+      [class*="Toolbar--"] > [class*="Wrapper--"] {
+        border-left: 8px solid var(--bg-primary);
+        border-right: 8px solid var(--bg-primary);
+        background: var(--bg-other);
+        .SelectorSearch {
+          padding: 8px;
+        }
+        input {
+          background-color: transparent;
+        }
+      }
+      [class*="WeekLayoutWorkspaceGrid--"] {
+        padding: 8px;
+        gap: 9px;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+      [class*="WeekLayoutDaysWrap--"],
+      [class*="DayLayoutDayScale--"] {
+        padding-left: 0;
+        margin-left: 61px;
+        margin-right: 9px;
+      }
+      [class*="WeekCellDay--"] {
+        font-size: 10px;
+        margin: 0;
+        .comma {
+          display: none;
+        }
+      }
+      [class*="WeekCell--"] {
+        flex-direction: column;
+      }
+      [class*="WeekLayout--"] {
+        [class*="EventHeader--"],
+        [class*="EventContent--"] {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+      [class*="WeekLayout--"],
+      [class*="DayLayout--"] {
+        max-height: calc(100% - 20px);
+        height: calc(100% - 20px);
+      }
+    }
+  }
+
+  &-md {
+    [class*="WeekLayoutDaysWrap--"],
+    [class*="DayLayoutDayScale--"] {
+      margin-right: 24px;
+      margin-left: 75px;
+    }
+    [class*="Toolbar--"] > [class*="Wrapper--"] {
+      border-left: 24px solid var(--bg-primary);
+      border-right: 24px solid var(--bg-primary);
+      .SelectorSearch {
+        padding: 8px;
+      }
+      input {
+        background-color: transparent;
+      }
+    }
+    [class*="MonthLayout--"] {
+      padding: 0 24px;
+    }
+    [class*="WeekLayoutWorkspaceGrid--"] {
+      padding: 8px 24px;
+    }
+    [class*="ToolbarControls--"] {
+      padding: 8px 24px;
+    }
+    [class*="WeekLayout--"],
+    [class*="DayLayout--"] {
+      .MuiTable-root {
+        min-width: calc(100vw - 114px);
+        max-width: calc(100vw - 114px);
+      }
+    }
+  }
+  &-xs {
+  }
+
+  &Mobile {
+    overflow: hidden;
+  }
+}
+
+.Root {
+  position: relative;
+  height: 100%;
+  max-height: 100%;
+  > * {
+    max-height: 100%;
+    height: 100%;
+  }
+}
+
+.Spacer {
+  flex-grow: 1;
+}
+
+.Toggler {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+  background: $bg-other;
+  border-radius: 40px;
+  &Button {
+    padding: 10px 16px;
+    font-size: 14px;
+    line-height: 20px;
+    color: $text-color;
+    background: transparent;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    &Active {
+      background: $bg-color;
+      box-shadow: 0px 1px 4px rgba(102, 102, 102, 0.5);
+    }
+  }
+  img {
+    width: 20px;
+    filter: $icon-filter;
+  }
+}
+
+.Divider {
+  height: 15px;
+  border-left: 1px solid $bg-tetriary;
+}
+
+.Toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  min-height: 45px;
+  max-height: 45px;
+  gap: 20px;
+  user-select: none;
+  :global {
+    [class*="Label--"] {
+      font-weight: bold;
+    }
+  }
+  &Buttons {
+    display: flex;
+    align-items: stretch;
+    > * {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      margin: 0 8px;
+      cursor: pointer;
+      img {
+        width: 12px;
+        height: 16px;
+        filter: $icon-filter;
+      }
+      &:hover {
+        img {
+          filter: $icon-active;
+        }
+      }
+      :global {
+        .forward {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+.Calendar {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex-grow: 1;
+}
+
+.DayLayout {
+  height: $workHeight;
+  max-height: $workHeight;
+  &DayScale {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding-left: 64px;
+    &:hover {
+      .WeekCellScrolled {
+        color: var(--text-color);
+        max-height: 100px;
+        top: 30px;
+      }
+    }
+  }
+}
+
+.Day {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 37px;
+  color: $text-color;
+  border-bottom: 1px solid $border-gray;
+  background: var(--bg-primary);
+  &Column {
+    display: flex;
+    flex-direction: column;
+  }
+  &Today {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: $calendar-active;
+    color: #fff;
+  }
+  &Date {
+    font-size: 52px;
+    line-height: 52px;
+    font-weight: bold;
+  }
+  &Month {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  &Week {
+    margin-right: 8px;
+    color: $text-tetriary;
+  }
+  &Day {
+    flex-basis: 100%;
+    color: $hint-color;
+    align-self: flex-start;
+  }
+}
+
+.MonthCell {
+  &Day {
+    display: none;
+    margin-right: 8px;
+    color: $text-tetriary;
+    &Wrap {
+      cursor: pointer;
+    }
+  }
+  &Today {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: $calendar-active;
+    color: #fff;
+  }
+
+  &Weekend {
+    &:not(.MonthCellToday) {
+      color: $color-red;
+    }
+  }
+}
+
+.TimeTable {
+  position: relative;
+}
+
+.TimeScale {
+  border-right-color: transparent;
+  background: $bg-color;
+  font-family: var(--secondary-font);
+  margin: 0 !important;
+}
+
+.Cell {
+  height: 60px;
+  background: $bg-color;
+  border-right-color: transparent;
+  border-bottom: 1px solid $border-gray;
+}
+
+.TimeScaleCell {
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  overflow: visible;
+  transform: translateY(-8px);
+  span {
+    color: $text-quaternary;
+  }
+}
+
+.WeekLayout {
+  max-height: $workHeight;
+  height: $workHeight;
+  &Days {
+    background: $bg-color;
+    border-bottom: 1px solid transparent;
+    z-index: 2;
+
+    &Wrap {
+      position: relative;
+      padding-left: 64px;
+      z-index: 1;
+    }
+  }
+  &Workspace {
+    max-height: calc(100% - 50px);
+    height: calc(100% - 50px);
+    &Grid {
+      display: flex;
+      gap: 24px;
+      padding-top: 5px;
+    }
+  }
+  &Year {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    font-weight: bold;
+  }
+}
+
+.MonthLayout {
+  $border: 1px solid $border-gray;
+  display: flex;
+  flex-direction: column;
+  max-height: $workHeight;
+  table {
+    border: $border;
+  }
+  &Days {
+    background: $bg-color;
+  }
+  &Cell {
+    position: relative;
+    height: 168px;
+    color: $hint-color;
+    &:not(:last-child) {
+      border-right: $border;
+    }
+    &Today {
+      color: $accent-color;
+      font-weight: bold;
+    }
+    &Dimmed {
+      color: $bg-tetriary;
+    }
+    &Content {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      inset: 0;
+      padding: 5px 0;
+    }
+  }
+  tr {
+    &:first-of-type {
+      .MonthLayoutCellContent {
+        .MonthCellDay {
+          display: inline;
+        }
+      }
+    }
+    &:not(:last-child) {
+      td {
+        border-bottom: $border;
+      }
+    }
+  }
+}
+
+.WeekCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 20px;
+  color: $text-color;
+  span {
+    font-family: var(--secondary-font);
+  }
+  &Scrolled {
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
+    top: 5px;
+    padding: 20px 10px 10px;
+    min-height: 100%;
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: var(--secondary-font);
+    font-weight: 600;
+    color: var(--bg-other);
+    background-color: var(--bg-other);
+    z-index: -1;
+    transition: 250ms;
+    cursor: pointer;
+  }
+  &Empty {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 20px;
+    font-weight: 600;
+  }
+  &Day {
+    margin-right: 8px;
+    color: $text-tetriary;
+  }
+  &Today {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: $calendar-active;
+    color: #fff;
+  }
+  &Month {
+    color: $hint-color;
+    text-transform: lowercase;
+  }
+
+  &Weekend {
+    &:not(.WeekCellToday) {
+      color: $color-red;
+    }
+  }
+}
+
+.Date {
+  min-width: 280px;
+  font-family: $title-font;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+}
+
+.HeadCell {
+  position: relative;
+  padding: 7px 0;
+  border-bottom: 1px solid $border-gray;
+  cursor: pointer;
+
+  &:hover {
+    .WeekCellScrolled {
+      color: var(--text-color);
+      max-height: 100px;
+      top: 30px;
+    }
+  }
+}
+
+.DayIndicator {
+  &Circle {
+    position: absolute;
+    top: calc(50% - 2.5px);
+    left: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: $calendar-active;
+  }
+
+  &Line {
+    width: 100%;
+    height: 1px;
+    background: $calendar-active;
+  }
+}
+
+.AddEvent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: $accent-color;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.Search {
+  width: 20px;
+  height: 20px;
+  margin-left: 14px;
+  padding: 0;
+  border: none;
+  background: $bg-color;
+  cursor: pointer;
+}
+
+.SearchInput {
+  position: relative;
+  &Close {
+    position: absolute;
+    top: calc(50% - 10px);
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    background: $bg-color;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+.Wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-basis: 324px;
+  max-width: 324px;
+}
+
+.Filters {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  &Title {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  &Item {
+    margin-bottom: 8px;
+  }
+}
+
+.AddButton {
+  &Mobile {
+    position: fixed;
+    right: 24px;
+    bottom: 32px;
+    box-shadow: var(--shadow-primary);
+    z-index: 10;
+  }
+}

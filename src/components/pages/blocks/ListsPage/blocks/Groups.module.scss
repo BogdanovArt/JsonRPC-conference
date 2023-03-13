@@ -1,0 +1,51 @@
+.Group {
+  &Item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 10px 8px 4px;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+    span {
+      display: inline-block;
+      &:first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+    svg {
+      width: 12px;
+      height: 12px;
+
+      :global {
+        .svg-shape.color-text {
+          fill: var(--border-gray);
+        }
+      }
+    }
+
+    &Active {
+      background: var(--bg-other);
+      &Icon {
+        position: absolute;
+        left: 20px;
+        svg {
+          :global {
+            .svg-shape.color-text {
+              fill: var(--accent-color);
+            }
+          }
+        }
+      }
+    }
+  }
+  &-xs,
+  &-md {
+    background-color: var(--bg-quaternary);
+    .GroupItem {
+      padding: 16px 40px;
+    }
+  }
+}

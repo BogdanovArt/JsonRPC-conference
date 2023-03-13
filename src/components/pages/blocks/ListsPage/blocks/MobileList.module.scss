@@ -1,0 +1,26 @@
+.List {
+  border-top: 1px solid var(--border-gray);
+  border-bottom: 1px solid var(--border-gray);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  flex-basis: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.SelectMode {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 76px;
+  padding: 0 24px;
+  z-index: 88;
+  background: var(--bg-primary);
+
+  display: flex;
+  align-items: center;
+}
+
+.SelectIcon {
+  width: 24px;
+  height: 24px;
+}

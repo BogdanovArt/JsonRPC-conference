@@ -1,0 +1,43 @@
+.Filter {
+  display: flex;
+  color: var(--accent-color);
+  font-size: 18px;
+  gap: 5px;
+  border-bottom: 1px dotted var(--accent-color);
+  cursor: pointer;
+  svg {
+    width: 10px !important;
+    height: 10px !important;
+    :global {
+      .svg-shape.color-text {
+        fill: var(--accent-color);
+      }
+    }
+  }
+}
+
+.Count {
+  color: var(--text-color);
+}
+
+.Menu {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  width: 384px;
+  font-size: 14px;
+  transform: translateY(10px) !important;
+  color: var(--text-color);
+  background: var(--bg-primary);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+  &Item {
+    padding: 14px 16px; 
+    &Text {
+      display: flex;
+      gap: 5px;
+    }
+    &:hover {
+      background-color: var(--bg-other);
+    }
+  }
+}

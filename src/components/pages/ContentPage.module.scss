@@ -1,0 +1,36 @@
+@import 'assets/scss/variables';
+
+.ContentPage {
+  position: relative;
+}
+
+.Fetching {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  z-index: 99;
+}
+
+.Test {
+  display: flex;
+  justify-content: stretch;
+  gap: 10px;
+  width: 100%;
+  > * {
+    flex-grow: 1;
+    flex-basis: calc(50% - 5px);
+  }
+}
+
+.ErrorModal {
+  max-width: 75%;
+  max-height: 75%;
+  width: auto;
+  height: auto;
+  padding: 24px;
+  :global {
+    .ContentTitle {
+      color: var(--warning);
+    }
+  }
+}

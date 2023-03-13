@@ -1,0 +1,25 @@
+@import "assets/scss/variables.scss";
+
+.Wrapper {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 16px;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  gap: 6px;
+  margin: 10px;
+}
+
+.Button {
+  display: flex;
+  cursor: pointer;
+  margin-left: 10px;
+  &:hover {
+    filter: var(--icon-secondary-filter-active);
+  }
+}
+
+.Player {
+  &Wrapper {
+  }
+}

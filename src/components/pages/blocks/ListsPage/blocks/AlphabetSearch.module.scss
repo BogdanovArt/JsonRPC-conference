@@ -1,0 +1,26 @@
+.Wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+}
+
+.Bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  padding: 6px 3px;
+  max-height: 100%;
+  overflow-y: scroll;
+  gap: 2px;
+  background: var(--grey-color);
+}
+
+.Letter {
+  color: var(--white-color);
+  font-family: var(--secondary-font);
+}

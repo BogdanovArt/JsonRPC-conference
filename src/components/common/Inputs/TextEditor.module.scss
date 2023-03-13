@@ -1,0 +1,71 @@
+@import "assets/scss/variables";
+
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Editor {
+  align-self: stretch;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  &Controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 5px 10px;
+    &Block {
+      display: flex;
+      align-items: center;
+    }
+    &Disabled {
+      pointer-events: none;
+    }
+  }
+  &Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0.65;
+    width: 25px;
+    height: 25px;
+    &:hover {
+      opacity: 1;
+    }
+    img {
+      filter: $icon-filter;
+    }
+  }
+}
+
+.Editable {
+  :global {
+    .ProseMirror {
+      padding: 10px;
+      min-height: 300px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.Controls {
+  display: flex;
+  gap: 10px;
+  > * {
+    flex-basis: 50%;
+  }
+}
+
+.Divider {
+  height: 1em;
+  border-left: 1px solid $border-color;
+  margin: 0 10px;
+}

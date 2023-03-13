@@ -1,0 +1,110 @@
+.Button {
+}
+
+.ModalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.UserList {
+  display: flex;
+  flex-direction: column;
+  &Controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+
+.UserItem {
+  display: grid;
+  grid-template-columns: 40px 1fr 95px;
+  align-items: center;
+  max-width: calc(100% - 8px);
+  min-height: 40px;
+  cursor: pointer;
+  > * {
+    padding: 8px 4px; 
+  }
+  &Name {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  &Number {
+    word-break: break-all;
+  }
+}
+
+.SelectAll {
+  color: var(--accent-color);
+}
+
+.SearchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 20px;
+  cursor: pointer;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.SearchControls {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  gap: 12px;
+  padding: 0 12px;
+}
+
+.Toggler {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent-color);
+  border-bottom: 1px dotted var(--accent-color);
+  cursor: pointer;
+}
+
+.Icon {
+  display: flex;
+  align-items: center;
+  svg {
+    width: 10px !important;
+    :global {
+      .svg-shape.color-text {
+        fill: var(--accent-color)
+      }
+    }
+  }
+  &Reverse {
+    transform: rotate(180deg);
+  }
+}
+
+.Popover {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 0;
+  min-width: 300px;
+  &Button {
+    padding: 14px;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--bg-secondary);
+    }
+    &Active {
+      background-color: var(--bg-other);
+    }
+  }
+}

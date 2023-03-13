@@ -1,0 +1,150 @@
+.User {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  &-md, &-xs, &Tablet {
+    padding: 8px 16px;
+  }
+  &Name {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  &Role {
+    font-size: 12px;
+    color: var(--hint-color);
+  }
+  &Search {
+    &Active {
+      background: var(--search-color);
+    }
+  }
+  &Actions {
+    &Wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 15px;
+    }
+    &Order {
+      order: 1;
+    }
+  }
+
+  &Video {
+    margin-right: 8px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    &.Disabled {
+      cursor: default;
+    }
+    &Icon {
+      display: flex;
+      align-items: center;
+    }
+    & > div {
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    :global {
+      svg .svg-shape.color-text {
+        fill: var(--empty-color);
+      }
+    }
+  }
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--border-gray);
+  }
+  &:hover {
+    background-color: var(--bg-secondary);
+  }
+  :global {
+    .tag {
+      font-size: 12px;
+    }
+  }
+}
+
+.Button {
+  cursor: pointer;
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .Icon {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  :global {
+    svg .svg-shape.color-text {
+      fill: var(--grey-color);
+    }
+  }
+}
+
+.Dimmed {
+  opacity: 0.5;
+}
+
+:global {
+  #App .icon--hand .svg-shape.color-text {
+    fill: #ff421f;
+  }
+}
+
+.MobUser {
+  width: 100%;
+  overflow: hidden;
+  color: var(--text-color);
+  &Item {
+    display: grid;
+    grid-template-columns: 16px 1fr;
+    gap: 8px;
+    padding: 24px 16px;
+  }
+  &Button {
+    &Remove {
+      font-weight: 600;
+      color: var(--warning);
+    }
+  }
+  &Roles {
+    margin-top: -10px;
+  }
+  &Icon {
+    :global {
+      path.svg-shape.color-text {
+        fill: var(--text-quaternary);
+      }
+    }
+  }
+}
+
+.Spacer {
+  width: 20px;
+}
+
+.Icon {
+  width: 16px;
+  height: 16px;
+  svg {
+    width: 16px !important;
+    height: 16px !important;
+    :global {
+      path.svg-shape.color-text {
+        fill: var(--accent-color);
+      }
+    }
+  }
+}

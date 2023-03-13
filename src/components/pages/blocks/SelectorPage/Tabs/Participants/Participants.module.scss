@@ -1,0 +1,91 @@
+@import "assets/scss/variables.scss";
+
+.Wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 100%;
+  padding: 16px 32px 16px 24px;
+  font-family: var(--secondary-font);
+
+  &-md, &-xs, &Tablet {
+    padding: 0;
+    gap: 0;
+  }
+
+  &Search {
+    &-md, &-xs, &Tablet {
+      opacity: 0;
+      visibility: hidden;
+      max-height: 0;
+      margin: 0 8px;
+      background: var(--bg-other);
+      transition: $trns;
+
+      input {
+        padding: 10px;
+        background: var(--bg-other);
+      }
+    }
+
+    &Show {
+      max-height: 60px;
+      padding: 8px;
+      transition: $trns;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.List {
+  border: none;
+}
+
+.Controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  &-md, &-xs, &Tablet {
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
+    z-index: 2;
+  }
+}
+
+.Icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  svg {
+    width: 32px;
+    height: 32px;
+    :global {
+      .svg-shape.color-text {
+        fill: var(--accent-color);
+      }
+    }
+  }
+}
+
+.Search {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  cursor: pointer;
+  opacity: 0.5;
+  svg {
+    .svg-shape.color-text {
+      fill: var(--text-quaternary);
+    }
+  }
+}
+
+.Empty {
+  &-md, &-xs, &Tablet {
+    padding: 0 16px;
+  }
+}
+

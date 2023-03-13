@@ -1,0 +1,170 @@
+@import "assets/scss/variables";
+
+.Event {
+  font-family: $title-font;
+  background: $event-color;
+  cursor: pointer;
+  &:hover {
+    background: $event-color;
+  }
+
+  &Running {
+    background: #c1f5c1;
+  }
+
+  &Header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  &Title {
+    font-family: var(--secondary-font);
+    font-weight: bold;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1; 
+  }
+
+  &Wrapper {
+  }
+
+  &Description {
+    margin-bottom: 8px;
+    font-size: 10px;
+    line-height: 12px;
+    color: $text-quaternary;
+  }
+
+  &Time {
+    margin-bottom: 8px;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  &Content {
+    box-sizing: border-box;
+    padding: 4px 8px;
+  }
+
+  &Hint {
+    color: $text-quaternary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    line-height: 12px;
+  }
+
+  &Search {
+    &Wrong {
+      opacity: 0.5;
+    }
+  }
+
+  &Start {
+    &Icon {
+      padding: 2px 0 0 0;
+      align-self: flex-start;
+      z-index: 1;
+      cursor: pointer;
+      background: $event-color;
+    }
+  }
+
+  &Icon {
+    width: 16px;
+    height: 16px;
+    &Play {
+      svg {
+        path {
+          fill: #22a5a6 !important;
+        }
+      }
+    }
+  }
+
+  &Popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--event-color);
+    box-shadow: var(--shadow-primary);
+    border-radius: 6px;
+    padding-bottom: 40px;
+    min-width: 100%;
+    max-width: 130px;
+    min-height: 100%;
+    transition: var(--transition) opacity;
+    cursor: pointer;
+    z-index: 999;
+  }
+
+  &Popped {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &Hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.EventMonth {
+  display: flex;
+  align-items: center;
+  width: 99%;
+  height: 24px;
+  padding: 0 4px;
+  overflow: hidden;
+  font-family: $title-font;
+  font-size: 10px;
+  line-height: 12px;
+  color: $text-color;
+  background: $event-color;
+  cursor: pointer;
+  &:hover {
+    background: $event-color;
+  }
+
+  &Time {
+    margin-right: 4px;
+    color: $text-tetriary;
+  }
+
+  &Title {
+    flex: 1;
+    white-space: nowrap;
+    max-width: calc(100% - 52px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.EventDetail {
+  width: 200px;
+  height: 200px;
+  background: #000;
+}
+
+.Avatars {
+  position: relative;
+  display: flex;
+  margin-bottom: 8px;
+  max-width: 121px;
+  overflow: hidden;
+  &Count {
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    background: $event-color;
+    color: $accent-color;
+  }
+}

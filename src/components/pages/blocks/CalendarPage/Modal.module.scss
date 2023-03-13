@@ -1,0 +1,352 @@
+@import "assets/scss/variables";
+
+.SelectorActive {
+  font-size: 12px;
+  color: green;
+}
+
+.Readonly {
+  :global {
+    .readonly {
+      display: none;
+      opacity: 0.25;
+      pointer-events: none;
+      background-color: red;
+    }
+  }
+}
+
+.Modal {
+  display: flex;
+  flex-direction: column;
+  width: 440px;
+  font-family: $title-font;
+  background: $bg-color;
+  box-shadow: -8px 0px 14px rgba(0, 0, 0, 0.2);
+  max-height: calc(100vh - 220px);
+  color: var(--text-color);
+  z-index: 1;
+  &-xs,
+  &-md {
+  }
+
+  &-xs,
+  &-md {
+    :global {
+      .MuiPopover-paper {
+        border: none;
+      }
+      .PopUpList {
+        padding: 6px 0;
+        font-size: 12px;
+        gap: 24px;
+      }
+      .ListItem {
+        padding: 0 12px;
+        &-delete {
+          color: var(--color-red);
+        }
+      }
+      .month-arrow {
+        display: none;
+      }
+      #timestartutc-datepicker {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 0 16px 16px;
+        height: calc(100vh - 100px);
+        .CalendarMonth {
+          display: flex;
+          flex-direction: column;
+          justify-content: stretch;
+          height: 50%;
+        }
+        .CalendarWeek {
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+  &Header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 24px;
+  }
+
+  &Action {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    &Button {
+      padding: 0;
+      font-size: 12px;
+      line-height: 16px;
+      color: #22a5a6;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      &:disabled {
+        color: var(--text-quaternary);
+        cursor: default;
+      }
+    }
+
+    &Close {
+      margin-left: auto;
+      padding: 0;
+      color: #22a5a6;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  &Content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 24px 24px;
+
+    &Title {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 600;
+      flex-basis: 100%;
+    }
+
+    &Description {
+      font-size: 14px;
+      line-height: 20px;
+      color: var(--text-quaternary);
+      
+    }
+
+    &Date {
+      display: flex;
+      gap: 7px;
+      &Button {
+        color: var(--accent-color);
+        cursor: pointer;
+        &Disabled {
+          color: var(--text-color);
+          cursor: default;
+          pointer-events: none;
+        }
+      }
+    }
+
+    &Owners {
+    }
+  }
+
+  &Owner {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &Title {
+      margin-left: 28px;
+      font-size: 12px;
+      line-height: 16px;
+      color: #7c7c7c;
+    }
+  }
+
+  &Members {
+    &Header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    &Title {
+      display: flex;
+      gap: 8px;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 600;
+      &Button {
+        :global {
+          svg path.svg-shape.color-text {
+            fill: var(--accent-color);
+          }
+        }
+      }
+    }
+
+    &Icon {
+      display: flex;
+      align-items: center;
+      margin: 0 8px;
+      &Clock {
+        margin-left: auto;
+      }
+    }
+
+    &List {
+      margin-bottom: 16px;
+      > *:not(:last-of-type) {
+        border-bottom: 1px solid var(--border-color);
+      }
+      &Item {
+        display: flex;
+        justify-content: space-between;
+        padding: 7px 8px;
+      }
+    }
+
+    &More {
+      margin-left: 8px;
+      font-size: 14px;
+      line-height: 20px;
+      color: $accent-color;
+      cursor: pointer;
+    }
+  }
+
+  &Member {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &Button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+  }
+
+  &Polls {
+    &Header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    &Title {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 600;
+    }
+
+    &Button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      background: $accent-color;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    &List {
+      padding-left: 8px;
+      &Item {
+        font-size: 14px;
+        line-height: 20px;
+        color: $accent-color;
+        cursor: pointer;
+
+        &:not(:last-of-type) {
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }
+
+  &Actions {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+
+    &Button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      margin: 0 14px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    &Icon {
+      width: 24px;
+      height: 24px;
+      padding: 0 !important;
+    }
+  }
+
+  &Start {
+    display: flex;
+    justify-content: center;
+    padding: 16px 24px;
+    &Button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 48px;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 600;
+      color: $accent-color;
+      background: transparent;
+      border: 1px solid $accent-color;
+      border-radius: 6px;
+      cursor: pointer;
+      &:hover {
+        color: $accent-hover;
+        border-color: $accent-hover;
+      }
+    }
+  }
+
+  &Search {
+    &Active {
+      background: $search-color;
+    }
+  }
+
+  &Type {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &ViewBar {
+    padding: 24px 0;
+  }
+
+  &Margin {
+    margin: 0 24px;
+  }
+
+  &Divider {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.Participants {
+  padding: 0;
+}

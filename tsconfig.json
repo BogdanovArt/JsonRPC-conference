@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "outDir": "./dist/",
+    "allowJs": true,
+    "preserveConstEnums": true,
+    "esModuleInterop": true,
+    "removeComments": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es5",
+    "baseUrl": "./src/",
+    "paths": {
+      "store/*": ["store/*"],
+      "assets/*": ["assets/*"],
+      "utils/*": ["utils/*"],
+      "types/*": ["types/*"],
+      "routes/*": ["routes/*"],
+      "components/*": ["components/*"],
+    }
+  },
+  "include": [
+    "src"
+  ]
+}

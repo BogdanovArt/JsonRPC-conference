@@ -1,0 +1,38 @@
+@import "assets/scss/variables.scss";
+
+.Wrapper {
+  border: 1px solid $border-color;
+  padding: 0px 29px;
+}
+
+.Content {
+  width: 100%;
+}
+
+.Icon {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  img {
+    min-width: 20px;
+    opacity: 0.5;
+    filter: $icon-filter;
+    transition: $trns;
+    transform: rotate(0);
+  }
+}
+
+.Flipped {
+  img {
+    transform: rotate(180deg);
+  }
+}
+
+.Title {
+  &Closed {
+    max-width: calc(100% - 80px);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,55 @@
+@import "assets/scss/variables.scss";
+
+.Wrapper {
+  position: relative;
+  width: 240px;
+  padding: 15px 15px 30px;
+  background-color: transparent;
+  user-select: none;
+}
+
+.Bubble {
+  border-radius: 6px;
+  padding: 9px 19px;
+  background-color: $bg-color;
+  box-shadow: $shadow-main;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    background: $bg-color;
+  }
+}
+
+.Controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+  &Button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    img {      
+      width: 15px;
+      height: 15px;
+    }
+    &:hover {
+      img {
+        filter: $icon-active;
+      }
+    }
+  }
+}
+
+.Timer {
+  color: $hint-color;
+}
+
+.SeekBar {
+  padding: 10px 0;
+}

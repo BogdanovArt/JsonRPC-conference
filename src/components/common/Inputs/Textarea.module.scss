@@ -1,0 +1,75 @@
+@import "assets/scss/variables";
+.Container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  * {
+    box-sizing: border-box;
+  }
+}
+.Wrapper {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid $text-tetriary;
+  border-radius: 6px;
+  transition: border 0.1s;
+  &:hover {
+    border-color: $border-hover;
+  }
+}
+.Focus {
+  border-color: $accent-color !important;
+}
+.Textarea {
+  width: 100%;
+  min-height: 88px;
+  color: $text-color;
+  padding: 14px 16px;
+  font-family: $title-font;
+  font-size: 14px;
+  line-height: 20px;
+  background: $bg-color;
+  border-radius: 6px;
+  border: none;
+  resize: none;
+  &::placeholder {
+    color: $text-quaternary;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $accent-color;
+  }
+  &Before {
+    padding-left: 0;
+  }
+  &After {
+    padding-right: 0;
+  }
+  &Centered {
+    &::placeholder {
+      text-align: center;
+    }
+  }
+}
+
+.Label {
+  margin-bottom: 6px;
+  color: $text-color;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  caret-color: $text-color !important;
+  -webkit-text-fill-color: $text-color;
+  -webkit-box-shadow: 0 0 0px 1000px $bg-color inset;
+}
+
+.Before,
+.After {
+}
+
+.Dimmed {
+  border-color: transparent !important;
+}

@@ -1,0 +1,32 @@
+@import "assets/scss/variables.scss";
+
+.Wrapper {
+  
+}
+
+.Form {
+  width: 100%;
+  display: flex;
+  justify-content: stretch;
+  gap: 46px;
+  padding-bottom: 44px;
+  &Block {
+    flex-grow: 1;
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &Column {
+      flex-direction: column;
+      align-self: flex-start;
+      gap: 28px;
+    }
+  }
+}
+
+.Controls {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}

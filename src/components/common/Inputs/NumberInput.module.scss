@@ -1,0 +1,49 @@
+@import "assets/scss/variables";
+
+.Controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px 0 0;
+    flex-grow: 1;
+    user-select: none;
+    cursor: pointer;
+  }
+  &Button {
+    filter: $icon-filter;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+      filter: $icon-active;
+    }
+    &Reversed {
+      transform: rotate(180deg);
+      padding: 0 0 0 8px;
+    }
+  }
+}
+
+.Readonly {
+  pointer-events: none;
+}
+
+.Label {
+  margin-bottom: 6px;
+}
+.Wrapper {
+}
+
+.Input {
+  border-radius: 6px;
+  input {
+    width: 10px;
+    padding: 6px 8px;
+  }
+}
+.Dimmed {
+  background-color: $bg-tetriary
+}

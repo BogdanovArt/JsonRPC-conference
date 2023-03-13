@@ -1,0 +1,80 @@
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--secondary-font);
+  height: 100%;
+}
+
+.Header {
+  display: flex;
+  min-height: 32px;
+  align-items: center;
+  padding: 16px 24px 8px 24px;
+  font-size: 18px;
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.Content {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &-md, &-xs, &Tablet {
+    border-top: 1px solid var(--border-gray);
+  }
+}
+
+.Grid {
+  min-height: 100%;
+  > div:last-child {
+    height: 100%;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 48px;
+    border-right: 1px solid var(--border-gray);
+  }
+}
+
+.Row {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  font-size: 12px;
+  > * {
+    padding: 0 8px;
+  }
+}
+
+.TimeStamp {
+  justify-self: center;
+  color: var(--text-quaternary);
+  cursor: pointer;
+}
+
+.RowPseudo {
+  position: relative;
+  min-height: 14px;
+  cursor: pointer;
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+  &:last-of-type {
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 2px 8px 2px 56px;
+    border-radius: 6px;
+    background: var(--bg-secondary);
+    opacity: 0;
+    transition: var(--transition);
+  }
+}

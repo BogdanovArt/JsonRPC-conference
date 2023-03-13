@@ -1,0 +1,62 @@
+.User {
+  display: grid;
+  padding: 8px 16px;
+  grid-template-columns: 24px 1fr;
+  column-gap: 4px;
+  font-family: var(--secondary-font);
+  align-items: center;
+}
+
+.Wrapper {
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--border-gray);
+  }
+}
+
+.Number {
+  margin-top: -6px;
+  font-size: 12px;
+  color: var(--text-quaternary);
+}
+
+.Avatar {
+  :global {
+    .tag {
+      font-size: 12px;
+    }
+  }
+}
+
+.Selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background: var(--accent-color);
+  border-radius: 50%;
+}
+
+.Icon {
+  width: 14px;
+  height: 14px;
+  :global {
+    svg .svg-shape.color-text {
+      fill: var(--white-color);
+    }
+  }
+}
+
+.Remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 100%;
+  background-color: var(--warning);
+  margin-right: 38px;
+  > * {
+    width: 20px;
+    height: 20px;
+  }
+}

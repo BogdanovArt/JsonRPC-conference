@@ -1,0 +1,33 @@
+export enum TabKeys {
+  participants = "participants",
+  settings = "settings",
+  permissions = "permissions",
+}
+
+export enum FormKeys {
+  duration = "calldurationsec",
+  participants = "participants",
+  permissions = "permissions",
+  name = "displayname",
+  state = "state",
+  mic = "default_mic",
+  speaker = "default_spk",
+  recall = "default_recall",
+  shared = "shared",
+  displayName = "displayname",
+  templateId = "t_id",
+  repeatCount = "repeat_count",
+  timeStartUTC = "timestartutc",
+  comment = "comment",
+  templates = "templates",
+  id = "id",
+  repeat = "repeat",
+  days = "days",
+  mode = "mode",
+  date = "date",
+  time = "time",
+  durationPlan = "duration_plan",
+  ext = "ext",
+  isVideo = "is_video",
+  videoMode = "video_mode",
+ }

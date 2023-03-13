@@ -1,0 +1,41 @@
+@import "assets/scss/variables.scss";
+
+.Wrapper {
+  position: relative;
+  height: 45px;
+}
+
+.Controls {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  padding-right: 5px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  > * {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0 4px;
+    filter: $icon-filter;
+    opacity: 0.5;
+    cursor: pointer;
+    border: 1px solid transparent;
+    &:hover {
+      filter: $icon-active;
+      opacity: 1;
+    }
+  }
+  &Disabled {
+    pointer-events: none;
+  }
+  &Increment {
+    transform: translateY(2px) rotate(180deg);
+  }
+  &Decrement {
+
+  }
+}

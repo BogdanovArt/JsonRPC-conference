@@ -1,0 +1,46 @@
+.List {
+  display: flex;
+  flex-direction: column;
+  min-width: 60vw;
+  max-width: calc(100vw - 75px);
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--bg-primary);
+  color: var(--text-color);
+}
+
+.Item {
+  display: flex;
+  justify-content: flex-start;
+  gap: 6px;
+  padding: 12px 8px;
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+  }
+  &Title {
+
+  }
+  &Subtitle {
+    color: var(--text-quaternary);
+  }
+  &Mark {
+    box-sizing: border-box;
+    margin-left: auto;
+    justify-self: flex-end;
+    width: 16px;
+    height: 16px;
+    border: 3px solid var(--bg-primary);
+    outline: 1px solid var(--border-color);
+    border-radius: 50%;
+    &Active {
+      outline: 1px solid var(--accent-color);
+      background-color: var(--accent-color);
+    }
+
+  }
+  &Icon {
+    width: 24px;
+    height: 24px;
+  }
+}

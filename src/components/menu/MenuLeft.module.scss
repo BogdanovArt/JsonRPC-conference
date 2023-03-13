@@ -1,0 +1,11 @@
+@import "assets/scss/variables";
+
+.MenuLeft {
+  display: flex;
+  padding: 0 0 0 42px;
+  &Controls > * {
+    font-weight: 800;
+    width: 100%;
+    justify-content: space-between !important;
+  }
+}

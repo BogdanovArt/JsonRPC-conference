@@ -1,0 +1,116 @@
+.Wrapper {
+  position: relative;
+  font-size: 12px;
+}
+
+.Controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 5px;
+  height: 44px;
+  img {
+    opacity: 0.5;
+    filter: var(--icon-filter);
+    max-height: 14px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &Wrapper {
+    justify-content: space-between;
+  }
+  &Button {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+  }
+  &Active {
+    img {
+      opacity: 1;
+      filter: var(--icon-filter-active);
+    }
+  }
+}
+
+.Graphic, .Info { 
+  flex-grow: 1;
+  flex-basis: calc(50% - 5px);
+  max-width: calc(50% - 5px);  
+}
+.Graphic { 
+  height: 150px;
+  width: 150px;
+  display: flex;
+  align-items: flex-end;
+  &Block {
+    display: flex;
+    max-width: 100%;
+    gap: 10px;
+  }
+}
+.Info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  &Title {
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  &Users {
+    border-top: 1px solid var(--bg-tetriary);
+    padding-top: 10px;
+    margin: 10px 5px 5px; 
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 5px;
+    row-gap: 5px;
+    color: var(--hint-color);
+  }
+  &List {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    &Item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    &Dot {
+      display: flex;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+  }
+}
+.Ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.Table {
+  padding: 0 6px;
+  .InfoListDot {
+    display: none;
+  }
+}
+
+.Absolute {
+  position: absolute;
+  bottom: 0;
+  right: 8px;
+  img {
+    opacity: 1;
+  }
+}
+
+.Content {
+  display: flex;
+  &Block {
+    flex-grow: 1;
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
